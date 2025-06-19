@@ -12,17 +12,32 @@ public class formulario1 extends JFrame {
     private JTextField textField5;
     private JTextField textField6;
     private JButton mostrarButton;
+    private JLabel resultado;
 
+    private void mostrarDatos(){
+        String n= textField1.getText();
+        String n2=textField2.getText();
+        String n3= textField3.getText();
+        String n4=textField4.getText();
+        String n5=textField5.getText();
+        String n6=textField6.getText();
+
+        String texto="<html>Nombre: "+n+"<br>Apellido: "+n2+"<br>Direccion: "+n3+"<br>Edad: "+n4+"<br>Telefono: "+n5+"<br>Estatura: "+n6+"</html>";
+        resultado.setText(texto);
+    }
     public formulario1() {
         setTitle("Formulario");
         setSize(600,500);
         setDefaultCloseOperation(EXIT_ON_CLOSE); //Para que aparezca los botones
         setContentPane(Principal); //Llama al contenedor
         setVisible(true); //Importante para que se visualice
+
+
         activarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"Datos ingresados correctamente");
+                mostrarDatos();
+
             }
         });
         mostrarButton.addActionListener(new ActionListener() {
